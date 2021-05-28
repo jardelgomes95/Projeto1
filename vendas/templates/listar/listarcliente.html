@@ -1,0 +1,48 @@
+{% extends 'adminlte/base.html' %}
+{% block content %}
+    <h1>Página de listagem de clientes</h1>
+    <a href="{% url 'Matricula' %}">CADASTRAR MATRICULA</a>
+
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>NOME</th>
+            <th>CPF</th>
+            <th>NÚMERO DA MATRICULA</th>
+        </thead>
+        <tbody>
+    {% for obj_matricula in object_list %}
+            <tr>
+                <td>{{obj_matricula.pk}}</td>
+                <td>{{obj_matricula.Nome}}</td>
+                <td>{{obj_matricula.CPF}}</td>
+                <td>{{obj_matricula.Numero_matricula}}</td>
+                <td><a href="{% url 'Editar_Matricula' obj_matricula.pk %}">EDITAR</a></td>
+            </tr>
+    {% empty %}
+        <h3>Desculpe, você ainda não possui alunos matriculados no sistema
+            <br/>:'(</h3>
+    {% endfor %}
+        </tbody>
+    </table>
+
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; Primeira Página |</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">Página Anterior </a>
+                {% endif %}
+
+                <span class="current">
+                    | Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}. |
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Próxima Página</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">| Última Página &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+{% endblock %}

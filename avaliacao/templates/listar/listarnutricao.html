@@ -1,0 +1,47 @@
+{% extends 'adminlte/base.html' %}
+{% block content %}
+    <h1>PÁGINA DE LISTAGEM DAS FICHAS NUTRICIONAIS DO SISTEMA</h1>
+    <a class="btn btn-primary" href="{% url 'Nutricao' %}"><i class="fa fa-plus"></i> CADASTRAR</a>
+
+    <table class="table table-striped">
+        <thead>
+            <th>ID</th>
+            <th>NOME</th>
+            <th>AÇÕES</th>
+
+        </thead>
+        <tbody>
+    {% for obj_nutricao in object_list %}
+            <tr>
+                <td>{{obj_nutricao.pk}}</td>
+                <td>{{obj_nutricao.cliente}}</td>
+                <td><a href="{% url 'Atualizar_nutricao' obj_nutricao.pk %}"><i class="fa fa-edit" rel="tooltip" title="ATUALIZAR"></i> </a>
+                <td><a href="{% url 'Atualizar_obs_nutricao' obj_nutricao.pk %}"><i class="fa fa-comment" rel="tooltip" title="ATUALIZAR OBSERVAÇÃO"></i> </a>
+            </tr>
+    {% empty %}
+        <h3>DESCULPE, AINDA NÃO HÁ FICHAS NUTRICIONAIS CADASTRADAS NO SISTEMA
+            <br/>(–_–)</h3>
+    {% endfor %}
+        </tbody>
+    </table>
+
+     {% if is_paginated %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a class="btn btn-default" href="?page=1">&laquo; Primeira Página </a>
+                <a class="btn btn-primary" href="?page={{ page_obj.previous_page_number }}"><i class="fa fa-arrow-left"></i> Página Anterior </a>
+                {% endif %}
+
+                <span class="current">
+                    | Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}. |
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a class="btn btn-primary" href="?page={{ page_obj.next_page_number }}">Próxima Página <i class="fa fa-arrow-right"></i></a>
+                    <a class="btn btn-default" href="?page={{ page_obj.paginator.num_pages }}">| Última Página &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+{% endblock %}

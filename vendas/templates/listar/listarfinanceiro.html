@@ -1,0 +1,45 @@
+{% extends 'adminlte/base.html' %}
+{% block content %}
+    <h1>Página de informações financeiras</h1>
+    <a href="{% url 'Financeiro' %}">CADASTRAR FINANCEIRO</a>
+
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>NOME</th>
+            <th>PLANO DE PAGAMENTO</th>
+        </thead>
+        <tbody>
+    {% for obj_financeiro in object_list %}
+            <tr>
+                <td>{{obj_financeiro.pk}}</td>
+                <td>{{obj_financeiro.cliente}}</td>
+                <td>{{obj_finaneiro.Plano_de_Pagamento}}</td>
+            </tr>
+    {% empty %}
+        <h3>Desculpe, você ainda não possui alunos cadastrados em seu sistema.
+            <br/>:'(</h3>
+    {% endfor %}
+        </tbody>
+    </table>
+
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; Primeira Página |</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">Página Anterior </a>
+                {% endif %}
+
+                <span class="current">
+                    | Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}. |
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Próxima Página</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">| Última Página &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+{% endblock %}
