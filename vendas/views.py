@@ -119,3 +119,13 @@ class financeiroUpdateView(UpdateView):
 
     def get_success_url(self):
         return reverse_lazy('Listar_Financeiro')
+
+
+class frequenciaUpdateView(UpdateView):
+    model = frequencia
+    template_name = 'frequencia.html'
+
+    fields = '__all__'
+
+    def get_success_url(self):
+        return reverse_lazy('Listar_Frequencia')

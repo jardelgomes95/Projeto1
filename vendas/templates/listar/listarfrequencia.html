@@ -18,6 +18,7 @@
                 <td>{{obj_frequencia.data}}</td>
                 <td>{{obj_frequencia.hora1}}</td>
                 <td>{{obj_frequencia.hora2}}</td>
+                <td><a href="{% url 'Editar_Frequencia' obj_frequencia.pk %}">EDITAR</a></td>
             </tr>
     {% empty %}
         <h3>Desculpe, você ainda não possui alunos cadastrados em seu sistema.
