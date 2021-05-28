@@ -1,0 +1,11 @@
+{% extends 'adminlte/base.html' %}
+{% load bootstrap %}
+{% block content  %}
+    <h1>PÁGINA DE AVALIAÇÃO FÍSICA</h1>
+        <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|bootstrap }}
+        <a class="btn btn-warning" href="{% url 'Lista_de_avaliacao' %}">Voltar</a>
+        <input type="submit" value="Cadastrar">
+    </form>
+{% endblock %}

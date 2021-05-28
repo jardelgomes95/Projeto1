@@ -1,0 +1,11 @@
+{% extends 'adminlte/base.html' %}
+{% load bootstrap %}
+{% block content  %}
+    <h1>Atualizar Treinos do aluno</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|bootstrap }}
+        <a class="btn btn-warning" href="{% url 'Lista_de_treinos' %}">Voltar</a>
+        <input  class="btn btn-warning" type="submit" value="Atualizar">
+    </form>
+{% endblock %}
