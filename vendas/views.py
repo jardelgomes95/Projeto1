@@ -110,3 +110,12 @@ class matriculaUpdateView(UpdateView):
     def get_success_url(self):
         return reverse_lazy('Listar_Matricula')
 
+
+class financeiroUpdateView(UpdateView):
+    model = financeiro
+    template_name = 'financeiro.html'
+
+    fields = '__all__'
+
+    def get_success_url(self):
+        return reverse_lazy('Listar_Financeiro')

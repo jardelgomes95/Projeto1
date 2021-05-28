@@ -3,7 +3,7 @@ from django.urls import path
 from .views import kangoodanceCreateView, funcionalCreateView, muaythaiCreateView, frequenciaCreateView, \
     frequenciaListView, financeiroListView, matriculaUpdateView
 from .views import matriculaCreateView, outros_servicoCreateView, financeiroCreateView, pilatesCreateView, \
-    fitdanceCreateView, matriculaListView
+    fitdanceCreateView, matriculaListView, financeiroUpdateView
 
 urlpatterns = [
     path('vendas/aluno', matriculaCreateView.as_view(), name="Matricula"),
@@ -21,4 +21,5 @@ urlpatterns = [
 
 
     path('editar/matricula/<int:pk>/', matriculaUpdateView.as_view(), name="Editar_Matricula"),
+    path('editar/financeiro/<int:pk>/', financeiroUpdateView.as_view(), name="Editar_Financeiro"),
 ]

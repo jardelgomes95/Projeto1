@@ -15,6 +15,7 @@
                 <td>{{obj_financeiro.pk}}</td>
                 <td>{{obj_financeiro.cliente}}</td>
                 <td>{{obj_finaneiro.Plano_de_Pagamento}}</td>
+                <td><a href="{% url 'Editar_Financeiro' obj_financeiro.pk %}">EDITAR</a></td>
             </tr>
     {% empty %}
         <h3>Desculpe, você ainda não possui alunos cadastrados em seu sistema.
