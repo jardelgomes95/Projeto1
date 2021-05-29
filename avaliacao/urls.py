@@ -1,5 +1,4 @@
 from django.urls import path
-
 from .views import avaliacaoCreateView, treinoCreateView, ficha_de_saudeCreateView, objetivosCreateView, \
     personalUpdateView, avaliacaoUpdateView
 from .views import avaliacaoObsFormView, ficha_de_saudeObsFormView, objetivosObsFormView, medicamentoObsFormView, \
@@ -8,13 +7,15 @@ from .views import ficha_de_saudeListView, ficha_de_saudeUpdateView, objetivosUp
     medicamentoListView, medicamentoUpdateView
 from .views import medicamentoCreateView, nutricaoCreateView, avaliacaoListView, treinoListView, personalCreateView, \
     personalListView, treinoUpdateView
-from .views import nutricaoUpdateView, nutricaoListView
+from .views import nutricaoUpdateView, nutricaoListView, avaliacaoDetailView, avaliacaoPDFDetailView
 
 urlpatterns = [
     path('avaliacao/aluno', avaliacaoCreateView.as_view(), name="Avaliação_Física"),
     path('listar/aluno', avaliacaoListView.as_view(), name="Lista_de_avaliacao"),
     path('atualizar/aluno/<int:pk>', avaliacaoUpdateView.as_view(), name="Atualizar_Aluno"),
     path('atualizar/aluno/observacao/<int:pk>', avaliacaoObsFormView.as_view(), name="Atualizar_obs_aluno"),
+    path('detalhar/aluno/<int:pk>', avaliacaoDetailView.as_view(), name="Detalhar_aluno"),
+    path('pdf/aluno/<int:pk>', avaliacaoPDFDetailView.as_view(), name="pdf_aluno"),
 
     path('avaliacao/treino', treinoCreateView.as_view(), name="Cadastrar_Treino"),
     path('listar/treino', treinoListView.as_view(), name="Lista_de_treinos"),

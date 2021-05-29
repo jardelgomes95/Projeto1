@@ -1,0 +1,35 @@
+{% extends "easy_pdf/base.html" %}
+
+{% block extra_style %}
+    <style type="text/css">
+        body {
+            font-family: "Helvetica", "sans-serif";
+            color:#333;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+<meta charset="utf-8">
+
+<div id="content">
+    <div class="main">
+        <center><h1>Avaliação Número {{ object.pk }}</h1></center>
+        <center>Venda realizada em {{ object.data_da_avaliacao }}</center>
+        <br/>
+        <br/>
+        <h3>Dados da Avaliação</h3>
+        <p><b>Nome:</b> {{ object.nome }}</p>
+        <p><b>Peso:</b> {{ object.peso }}</p>
+        <p><b>Altura:</b> {{ object.altura }}</p>
+        <p><b>IMC:</b> {{ object.IMC }}</p>
+        <p><b>Percentual de Gordura:</b> {{ object.Gordura }}</p>
+        <p><b>Percentual de Massa Magra:</b> {{ object.Massa_magra }}</p>
+        <p><b>Doenças:</b> {{ object.Doencas_pre_existentes }}</p>
+        <p><b>Habitos:</b> {{ object.Habitos }}</p>
+        <p><b>Observações:</b> {{ object.observacoes }}</p>
+        <br/>
+    </div>
+</div>
+{% endblock %}

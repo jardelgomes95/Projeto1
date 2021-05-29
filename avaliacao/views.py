@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView, UpdateView
-
+from django.views.generic import CreateView, ListView, UpdateView, DetailView
+from easy_pdf.views import PDFTemplateResponseMixin
 from .forms import avaliacaoObsForm, ficha_de_saudeObsForm, objetivosObsForm, medicamentoObsForm, nutricaoObsForm
 from .models import avaliacao, ficha_de_saude, treino, objetivos, medicamento, nutricao, personal
 
@@ -46,6 +46,16 @@ class avaliacaoObsFormView(UpdateView):
     def get_success_url(self):
         messages.success(self.request, 'Observação atualizada com sucesso!')
         return reverse_lazy('Lista_de_avaliacao')
+
+
+class avaliacaoDetailView(DetailView):
+    model = avaliacao
+    template_name = 'detalhar/detalharaluno.html'
+
+
+class avaliacaoPDFDetailView(PDFTemplateResponseMixin, DetailView):
+    model = avaliacao
+    template_name = 'detalhar/pdfaluno.html'
 
 
 

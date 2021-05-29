@@ -18,6 +18,8 @@
                 <td>{{obj_avaliacao.data_da_avaliacao}}</td>
                 <td><a href="{% url 'Atualizar_Aluno' obj_avaliacao.pk %}"><i class="fa fa-edit" rel="tooltip" title="ATUALIZAR"></i> </a>
                 <td><a href="{% url 'Atualizar_obs_aluno' obj_avaliacao.pk %}"><i class="fa fa-comment" rel="tooltip" title="ATUALIZAR OBSERVAÇÃO"></i> </a>
+                <td><a href="{% url 'Detalhar_aluno' obj_avaliacao.pk %}"><i class="fa fa-eye" rel="tooltip" title="VER DETALHES"></i> </a>
+                <td><a href="{% url 'pdf_aluno' obj_avaliacao.pk %}"><i class="fa fa-file" rel="tooltip" title="IMPRIMIR"></i> </a>
             </tr>
     {% empty %}
         <h3>DESCULPE, VOCÊ AINDA NÃO POSSUI ALUNOS CADASTRADOS EM SEU SISTEMA.

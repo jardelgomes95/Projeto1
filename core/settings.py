@@ -50,6 +50,7 @@ THIRDS_APPS = [
     'adminlte3',
     'adminlte3_theme',
     'django.contrib.admin',
+    'easy_pdf',
 ]
 
 INSTALLED_APPS = DEFAULT_APPS + MY_APPS + THIRDS_APPS
