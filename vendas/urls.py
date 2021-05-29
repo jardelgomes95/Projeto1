@@ -17,7 +17,7 @@ urlpatterns = [
     path('vendas/frequencia', frequenciaCreateView.as_view(), name="Frequencia"),
     path('listar/cliente', matriculaListView.as_view(), name="Listar_Matricula"),
     path('listar/frequencia', frequenciaListView.as_view(), name="Listar_Frequencia"),
-    path('listar/financeiro', financeiroListView.as_view(), name="Financeiro"),
+    path('listar/financeiro', financeiroListView.as_view(), name="Listar_Financeiro"),
 
 
     path('editar/matricula/<int:pk>/', matriculaUpdateView.as_view(), name="Editar_Matricula"),
