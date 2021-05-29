@@ -6,7 +6,9 @@ Django==3.1.7
 django-adminlte3==0.1.6
 django-bootstrap==0.2.4
 django-bootstrap-form==3.4
+django-cors-headers==3.7.0
 django-easy-pdf==0.1.1
+django-utils-six==2.0
 filelock==3.0.12
 form==0.0.1
 future==0.18.2
