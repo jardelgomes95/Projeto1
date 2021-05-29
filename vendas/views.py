@@ -27,6 +27,7 @@ class outros_servicoCreateView(CreateView):
     fields = '__all__'
 
 
+
 class financeiroCreateView(CreateView):
     model = financeiro
     template_name = 'financeiro.html'
@@ -98,8 +99,8 @@ class frequenciaListView(ListView):
     paginate_by = 10
 
 
-
 ########## UPDATEVIEW ##########
+
 
 class matriculaUpdateView(UpdateView):
     model = matricula
