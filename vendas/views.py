@@ -1,6 +1,8 @@
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, UpdateView
-
+from easy_pdf.views import PDFTemplateResponseMixin
+from django.contrib import messages
+from .forms import *
 from .models import matricula, outros_servico, financeiro, pilates, fitdance, kangoodance, funcional, muaythai, \
     frequencia
 
@@ -80,6 +82,8 @@ class frequenciaCreateView(CreateView):
     fields = '__all__'
 
 
+########## LISTVIEW ##########
+
 
 class matriculaListView(ListView):
     model = matricula
@@ -130,3 +134,19 @@ class frequenciaUpdateView(UpdateView):
 
     def get_success_url(self):
         return reverse_lazy('Listar_Frequencia')
+
+
+########## FORMS ##########
+
+
+class matriculaObsForm(UpdateView):
+    model = matricula
+    form_class = matriculaObsForm
+    template_name = 'Atualizar/atualizarcliente.html'
+
+    def get_success_url(self):
+        messages.success(self.request, 'Observação atualizada com sucesso!')
+        return reverse_lazy('Listar_Matricula')
+
+
+
