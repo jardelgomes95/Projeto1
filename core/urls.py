@@ -21,6 +21,7 @@ from vendas import urls as urls_vendas
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
     path('vendas/', include(urls_vendas)),
     path('avaliacao/', include(urls_avaliacao)),
     ]
