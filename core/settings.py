@@ -42,6 +42,8 @@ DEFAULT_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    # local apps
+    'pages.apps.PagesConfig',
 ]
 
 MY_APPS = [
@@ -74,7 +76,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['templates', BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
