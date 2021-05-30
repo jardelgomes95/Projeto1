@@ -162,6 +162,19 @@ AUTHENTICATION_BACKENDS = [
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 
+# Receber retorno de email no console
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# Só precisa digitar a senha uma vez
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+# Não precisa de username
+ACCOUNT_USERNAME_REQUIRED = False
+# Método de autenticação: email
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+# Email obrigatório
+ACCOUNT_EMAIL_REQUIRED = True
+# Email único
+ACCOUNT_UNIQUE_EMAIL = True
+
 # django-crispy-forms
 
 CRISPY_TEMPLATES_PACK = 'bootstrap4'
