@@ -37,7 +37,7 @@
 
                 <!-- Bloco de código de ítem com efeito de selecionado do menú -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
+                    <a href="{% url 'Lista_de_avaliacao' %}" class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Página Principal</p>
                     </a>
@@ -54,7 +54,7 @@
                 <!-- Bloco de código de árvore de itens do menú -->
                 <li class="nav-item has-tree-view ">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-shopping-cart"></i> <p>Avaliação</p>
+                        <i class="nav-icon fas fa-stethoscope"></i> <p>Avaliação</p>
                         <p><i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -75,39 +75,118 @@
                 <!-- Bloco de código de árvore de itens do menú -->
                 <li class="nav-item has-tree-view ">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-circle"></i> <p>Produto</p>
+                        <i class="nav-icon fas fa-heartbeat"></i> <p>Ficha de Saúde</p>
                         <p><i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview menu-open">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{% url 'Lista_de_saúde' %}" class="nav-link">
                                 <i class="nav-icon fas fa-list"></i> Listar
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{% url 'Ficha_de_saúde' %}" class="nav-link">
                                 <i class="nav-icon fas fa-plus"></i> Cadastrar
                             </a>
                         </li>
                     </ul>
                 </li>
 
-                <!-- Bloco de código de árvore de itens do menú -->
                 <li class="nav-item has-tree-view ">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-circle"></i> <p>Cliente</p>
+                        <i class="nav-icon fas fa-male"></i> <p>Objetivos</p>
                         <p><i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview menu-open">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{% url 'Listar_objetivos' %}" class="nav-link">
                                 <i class="nav-icon fas fa-list"></i> Listar
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{% url 'Objetivos_do_aluno' %}" class="nav-link">
+                                <i class="nav-icon fas fa-plus"></i> Cadastrar
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item has-tree-view ">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-medkit"></i> <p>Ficha de Medicamentos</p>
+                        <p><i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview menu-open">
+                        <li class="nav-item">
+                            <a href="{% url 'Listar_medicamento' %}" class="nav-link">
+                                <i class="nav-icon fas fa-list"></i> Listar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'Medicamentos_usados' %}" class="nav-link">
+                                <i class="nav-icon fas fa-plus"></i> Cadastrar
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item has-tree-view ">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-coffee"></i> <p>Ficha Nutrição</p>
+                        <p><i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview menu-open">
+                        <li class="nav-item">
+                            <a href="{% url 'Listar_nutricao' %}" class="nav-link">
+                                <i class="nav-icon fas fa-list"></i> Listar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'Nutricao' %}" class="nav-link">
+                                <i class="nav-icon fas fa-plus"></i> Cadastrar
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item has-tree-view ">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-user-plus"></i> <p>Personal</p>
+                        <p><i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview menu-open">
+                        <li class="nav-item">
+                            <a href="{% url 'Listar_Personal' %}" class="nav-link">
+                                <i class="nav-icon fas fa-list"></i> Listar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'Cadastrar_Personal' %}" class="nav-link">
+                                <i class="nav-icon fas fa-plus"></i> Cadastrar
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item has-tree-view ">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-bicycle"></i> <p>Treino</p>
+                        <p><i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview menu-open">
+                        <li class="nav-item">
+                            <a href="{% url 'Lista_de_treinos' %}" class="nav-link">
+                                <i class="nav-icon fas fa-list"></i> Listar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'Cadastrar_Treino' %}" class="nav-link">
                                 <i class="nav-icon fas fa-plus"></i> Cadastrar
                             </a>
                         </li>
