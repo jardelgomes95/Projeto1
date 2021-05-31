@@ -1,0 +1,20 @@
+{% extends 'adminlte/base.html' %}
+{% block content %}
+    <h1>DETALHES DA AVALIAÇÃO FÍSICA:</h1>
+
+<p><b>Nome:</b> {{ object.nome }}</p>
+<p><b>Sexo:</b> {{ object.genero }}</p>
+<p><b>Data da Avaliação:</b> {{ object.data_da_avaliacao }}</p>
+<p><b>Hora venda:</b> {{ object.hora_venda }}</p>
+<p><b>Peso:</b> {{ object.peso }}</p>
+<p><b>Altura:</b> {{ object.altura }}</p>
+<p><b>IMC:</b> {{ object.IMC }}</p>
+<p><b>Laudos e Exames:</b> <img class="rounded-circle" src="/media/{{ object.laudos_medicos }}" /></p>
+<p><b>Percentual de Gordura:</b> {{ object.Gordura }}</p>
+<p><b>Percentual de Massa Magra:</b> {{ object.Massa_magra }}</p>
+<p><b>Quantidade de itens:</b> {{ object.qtd_itens }}</p>
+<p><b>Profissao:</b> {{ object.Profissao }}</p>
+<p><b>Doencas Pré-Existentes:</b> {{ object.Doencas_pre_existentes }}</p>
+<p><b>Habitos:</b> {{ object.Habitos }}</p>
+<p><b>Observacoes:</b> {{ object.observacoes }}</p>
+{% endblock %}
