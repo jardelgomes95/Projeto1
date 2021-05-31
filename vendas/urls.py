@@ -3,7 +3,8 @@ from django.urls import path
 from .views import kangoodanceCreateView, funcionalCreateView, muaythaiCreateView, frequenciaCreateView, \
     frequenciaListView, financeiroListView, matriculaUpdateView
 from .views import matriculaCreateView, outros_servicoCreateView, financeiroCreateView, pilatesCreateView, \
-    fitdanceCreateView, matriculaListView, financeiroUpdateView, frequenciaUpdateView
+    fitdanceCreateView, matriculaListView, financeiroUpdateView, frequenciaUpdateView, outros_servicosListView, \
+    outros_servicosUpdateView
 
 urlpatterns = [
     path('vendas/aluno', matriculaCreateView.as_view(), name="Matricula"),
@@ -18,9 +19,11 @@ urlpatterns = [
     path('listar/cliente', matriculaListView.as_view(), name="Listar_Matricula"),
     path('listar/frequencia', frequenciaListView.as_view(), name="Listar_Frequencia"),
     path('listar/financeiro', financeiroListView.as_view(), name="Listar_Financeiro"),
+    path('listar/outros_servicos', outros_servicosListView.as_view(), name="Listar_Outros_Servicos"),
 
 
     path('editar/matricula/<int:pk>/', matriculaUpdateView.as_view(), name="Editar_Matricula"),
     path('editar/financeiro/<int:pk>/', financeiroUpdateView.as_view(), name="Editar_Financeiro"),
     path('editar/frequencia/<int:pk>/', frequenciaUpdateView.as_view(), name="Editar_Frequencia"),
+    path('editar/outros_servicos/<int:pk>/', outros_servicosUpdateView.as_view(), name="Editar_Outros_Servicos"),
 ]

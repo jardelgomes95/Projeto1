@@ -103,6 +103,12 @@ class frequenciaListView(ListView):
     paginate_by = 10
 
 
+class outros_servicosListView(ListView):
+    model = outros_servico
+    template_name = 'listar/listaroutros_servicos.html'
+    paginate_by = 10
+
+
 ########## UPDATEVIEW ##########
 
 
@@ -134,6 +140,16 @@ class frequenciaUpdateView(UpdateView):
 
     def get_success_url(self):
         return reverse_lazy('Listar_Frequencia')
+
+
+class outros_servicosUpdateView(UpdateView):
+    model = outros_servico
+    template_name = 'outros_servicos.html'
+
+    fields = '__all__'
+
+    def get_success_url(self):
+        return reverse_lazy('Listar_Outros_Servicos')
 
 
 ########## FORMS ##########
