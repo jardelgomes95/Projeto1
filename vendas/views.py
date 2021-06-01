@@ -91,8 +91,8 @@ class frequenciaCreateView(CreateView):
 
 
 class matriculaListView(ListView):
-    model = pilates
-    template_name = 'listar/listarpilates.html'
+    model = matricula
+    template_name = 'listar/listarcliente.html'
     paginate_by = 10
 
 
