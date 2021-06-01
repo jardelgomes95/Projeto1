@@ -1,0 +1,49 @@
+{% extends 'adminlte/base.html' %}
+{% block content %}
+    <h1>Página de Pilates</h1>
+    <a href="{% url 'Pilates' %}">CADASTRAR PILATES</a>
+
+   <table class="table table-striped">
+        <thead>
+            <th>ID</th>
+            <th>NOME</th>
+            <th>HORA DE ENTRADA</th>
+            <th>HORA DE SAÍDA</th>
+        </thead>
+        <tbody>
+    {% for obj_pilates in object_list %}
+            <tr>
+                <td>{{obj_pilates.pk}}</td>
+                <td>{{obj_pilates.cliente}}</td>
+                <td>{{obj_pilates.data}}</td>
+                <td>{{obj_pilates.hora1}}</td>
+                <td>{{obj_pilates.hora2}}</td>
+                <td><a href="{% url 'Editar_Pilates' obj_pilates.pk %}">EDITAR</a></td>
+            </tr>
+    {% empty %}
+        <h3>Desculpe, você ainda não possui alunos cadastrados no pilates.
+            <br/>:'(</h3>
+    {% endfor %}
+        </tbody>
+    </table>
+
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; Primeira Página |</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">Página Anterior </a>
+                {% endif %}
+
+                <span class="current">
+                    | Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}. |
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Próxima Página</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">| Última Página &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -48,13 +48,15 @@ class pilatesCreateView(CreateView):
 
     fields = '__all__'
 
+    def get_success_url(self):
+        return reverse_lazy('Listar_Pilates')
+
 
 class fitdanceCreateView(CreateView):
     model = fitdance
     template_name = 'fit_dance.html'
 
     fields = '__all__'
-
 
 
 class kangoodanceCreateView(CreateView):
@@ -71,13 +73,11 @@ class funcionalCreateView(CreateView):
     fields = '__all__'
 
 
-
 class muaythaiCreateView(CreateView):
     model = muaythai
     template_name = 'muay_thai.html'
 
     fields = '__all__'
-
 
 
 class frequenciaCreateView(CreateView):
@@ -91,8 +91,8 @@ class frequenciaCreateView(CreateView):
 
 
 class matriculaListView(ListView):
-    model = matricula
-    template_name = 'listar/listarcliente.html'
+    model = pilates
+    template_name = 'listar/listarpilates.html'
     paginate_by = 10
 
 
@@ -111,6 +111,12 @@ class frequenciaListView(ListView):
 class outros_servicosListView(ListView):
     model = outros_servico
     template_name = 'listar/listaroutros_servicos.html'
+    paginate_by = 10
+
+
+class pilatesListView(ListView):
+    model = pilates
+    template_name = 'listar/listarpilates.html'
     paginate_by = 10
 
 
@@ -157,6 +163,16 @@ class outros_servicosUpdateView(UpdateView):
         return reverse_lazy('Listar_Outros_Servicos')
 
 
+class pilatesUpdateView(UpdateView):
+    model = pilates
+    template_name = 'pilates.html'
+
+    fields = '__all__'
+
+    def get_success_url(self):
+        return reverse_lazy('Listar_Pilates')
+
+
 ########## FORMS ##########
 
 
@@ -168,6 +184,3 @@ class matriculaObsForm(UpdateView):
     def get_success_url(self):
         messages.success(self.request, 'Observação atualizada com sucesso!')
         return reverse_lazy('Listar_Matricula')
-
-
-
