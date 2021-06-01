@@ -1,0 +1,49 @@
+{% extends 'adminlte/base.html' %}
+{% block content %}
+    <h1>Página de serviços adicionais</h1>
+    <a href="{% url 'Outros_Serviços' %}">CADASTRAR SERVIÇO ADICIONAL</a>
+
+   <table class="table table-striped">
+        <thead>
+            <th>ID</th>
+            <th>NOME</th>
+            <th>HORA DE ENTRADA</th>
+            <th>HORA DE SAÍDA</th>
+        </thead>
+        <tbody>
+    {% for obj_outros_servico in object_list %}
+            <tr>
+                <td>{{obj_outros_servico.pk}}</td>
+                <td>{{obj_outros_servico.cliente}}</td>
+                <td>{{obj_outros_servico.data}}</td>
+                <td>{{obj_outros_servico.hora1}}</td>
+                <td>{{obj_outros_servico.hora2}}</td>
+                <td><a href="{% url 'Editar_Outros_Servicos' obj_outros_servico.pk %}"><i class="fa fa-edit" rel="tooltip" title="ATUALIZAR"></i> </a>
+            </tr>
+    {% empty %}
+        <h3>Desculpe, você ainda não possui alunos cadastrados em seu sistema.
+            <br/>:'(</h3>
+    {% endfor %}
+        </tbody>
+    </table>
+
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; Primeira Página |</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">Página Anterior </a>
+                {% endif %}
+
+                <span class="current">
+                    | Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}. |
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Próxima Página</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">| Última Página &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+{% endblock %}

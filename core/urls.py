@@ -23,4 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('vendas/', include(urls_vendas)),
     path('avaliacao/', include(urls_avaliacao)),
+    path('accounts/', include('allauth.urls')),
+    path('vendas/', include(urls_vendas)),
+    path('avaliacao/', include(urls_avaliacao)),
+    path('', include('pages.urls', namespace='pages')),
     ]

@@ -164,3 +164,5 @@ class frequencia(models.Model):
 
         def __str__(self):
                 return str(self.pk) + ' - ' + self.Observacao
+
+

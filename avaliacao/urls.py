@@ -8,6 +8,7 @@ from .views import ficha_de_saudeListView, ficha_de_saudeUpdateView, objetivosUp
 from .views import medicamentoCreateView, nutricaoCreateView, avaliacaoListView, treinoListView, personalCreateView, \
     personalListView, treinoUpdateView
 from .views import nutricaoUpdateView, nutricaoListView, avaliacaoDetailView, avaliacaoPDFDetailView
+from .views import nutricaoUpdateView, nutricaoListView, avaliacaoPDFDetailView, avaliacaoDetailView
 
 urlpatterns = [
     path('avaliacao/aluno', avaliacaoCreateView.as_view(), name="Avaliação_Física"),
