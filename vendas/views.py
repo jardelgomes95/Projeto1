@@ -28,6 +28,8 @@ class outros_servicoCreateView(CreateView):
 
     fields = '__all__'
 
+    def get_success_url(self):
+        return reverse_lazy('Listar_Outros_Servicos')
 
 
 class financeiroCreateView(CreateView):
@@ -35,6 +37,9 @@ class financeiroCreateView(CreateView):
     template_name = 'financeiro.html'
 
     fields = '__all__'
+
+    def get_success_url(self):
+        return reverse_lazy('Listar_Financeiro')
 
 
 class pilatesCreateView(CreateView):
