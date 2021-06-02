@@ -25,8 +25,6 @@
         {% endblock %}
 
         {% block form %}{% endblock %}
-
-        <!-- sidebar menu: : style can be found in sidebar.less -->
         {% block nav_links_ul %}
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -49,6 +47,108 @@
                         <i class="nav-icon fas fa-user-secret"></i>
                         <p>Área Administrativa</p>
                     </a>
+                </li>
+
+                <!-- Bloco de código de árvore de itens do menú -->
+                <li class="nav-item has-tree-view ">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-paperclip"></i> <p>Matricula</p>
+                        <p><i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview menu-open">
+                        <li class="nav-item">
+                            <a href="{% url 'Listar_Matricula' %}" class="nav-link">
+                                <i class="nav-icon fas fa-list"></i> Listar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'Matricula' %}" class="nav-link">
+                                <i class="nav-icon fas fa-plus"></i> Cadastrar
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- Bloco de código de árvore de itens do menú -->
+                <li class="nav-item has-tree-view ">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas  fa-credit-card"></i> <p>Financeiro</p>
+                        <p><i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview menu-open">
+                        <li class="nav-item">
+                            <a href="{% url 'Listar_Financeiro' %}" class="nav-link">
+                                <i class="nav-icon fas fa-list"></i> Listar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'Financeiro' %}" class="nav-link">
+                                <i class="nav-icon fas fa-plus"></i> Cadastrar
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item has-tree-view ">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-calendar"></i> <p>Frequencia</p>
+                        <p><i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview menu-open">
+                        <li class="nav-item">
+                            <a href="{% url 'Listar_Frequencia' %}" class="nav-link">
+                                <i class="nav-icon fas fa-list"></i> Listar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'Frequencia' %}" class="nav-link">
+                                <i class="nav-icon fas fa-plus"></i> Cadastrar
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item has-tree-view ">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-toggle-on"></i> <p>Outros Serviços</p>
+                        <p><i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview menu-open">
+                        <li class="nav-item">
+                            <a href="{% url 'Listar_Outros_Servicos' %}" class="nav-link">
+                                <i class="nav-icon fas fa-list"></i> Listar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'Outros_Serviços' %}" class="nav-link">
+                                <i class="nav-icon fas fa-plus"></i> Cadastrar
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item has-tree-view ">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-bolt"></i> <p>Pilates</p>
+                        <p><i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview menu-open">
+                        <li class="nav-item">
+                            <a href="{% url 'Listar_Pilates' %}" class="nav-link">
+                                <i class="nav-icon fas fa-list"></i> Listar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'Pilates' %}" class="nav-link">
+                                <i class="nav-icon fas fa-plus"></i> Cadastrar
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <!-- Bloco de código de árvore de itens do menú -->
